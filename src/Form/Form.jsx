@@ -17,25 +17,25 @@ function Form() {
   }
 
   return(
-    <div>
-      <form action="post">
-        <fieldset>
-          <legend>Your favourite car model:</legend>
-          <p>
-            <label for="year">Year:</label>
-            <input id="year" type="number" value={car.year} onChange={handleYearChange} />
+    <div className="flex flex-col justify-center items-center h-screen">
+      <form className="p-4 border border-gray-500 bg-gray-200" action="post">
+        <fieldset className="flex flex-col gap-3">
+          <legend className="mb-3 text-xl">Your favourite car model:</legend>
+          <p className="flex gap-3">
+            <input className="border px-2" id="year" type="number" value={car.year} onChange={handleYearChange} />
+            <label for="year">Year</label>
           </p>
-          <p>
-            <label for="manufacturer">Manufacturer:</label>
-            <input id="manufacturer" type="text" value={car.manufacturer} onChange={handleManufacturerChange} />
+          <p className="flex gap-3">
+            <input className="border px-2" id="manufacturer" type="text" value={car.manufacturer} onChange={handleManufacturerChange} />
+            <label for="manufacturer">Manufacturer</label>
           </p>
-          <p>
-            <label for="model">Model:</label>
-            <input id="model" type="text" value={car.model} onChange={handleModelChange} />
+          <p className="flex gap-3">
+            <input className="border px-2" id="model" type="text" value={car.model} onChange={handleModelChange} />
+            <label for="model">Model</label>
           </p>
         </fieldset>
       </form>
-      <h1>You have chosen: {car.year} {car.manufacturer} {car.model}</h1>
+      <h1 className="text-3xl mt-6">You have chosen: <span className="text-blue-400">{car.year} {car.manufacturer} {car.model}</span></h1>
     </div>
   )
 }
