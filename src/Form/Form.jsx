@@ -18,19 +18,24 @@ function Form() {
 
   return(
     <div>
-      <h1>Choose your favourite car model:</h1>
-      <p>You have chosen: {car.year} {car.manufacturer} {car.model}</p>
-      <div>
-        <label for="year">Year:</label>
-        <input id="year" type="number" value={car.year} onChange={handleYearChange} />
-
-        <label for="manufacturer">Manufacturer:</label>
-        <input id="manufacturer" type="text" value={car.manufacturer} onChange={handleManufacturerChange} />
-
-        <label for="model">Model:</label>
-        <input id="model" type="text" value={car.model} onChange={handleModelChange} />
-      </div>
-      
+      <form action="post">
+        <fieldset>
+          <legend>Your favourite car model:</legend>
+          <p>
+            <label for="year">Year:</label>
+            <input id="year" type="number" value={car.year} onChange={handleYearChange} />
+          </p>
+          <p>
+            <label for="manufacturer">Manufacturer:</label>
+            <input id="manufacturer" type="text" value={car.manufacturer} onChange={handleManufacturerChange} />
+          </p>
+          <p>
+            <label for="model">Model:</label>
+            <input id="model" type="text" value={car.model} onChange={handleModelChange} />
+          </p>
+        </fieldset>
+      </form>
+      <h1>You have chosen: {car.year} {car.manufacturer} {car.model}</h1>
     </div>
   )
 }
