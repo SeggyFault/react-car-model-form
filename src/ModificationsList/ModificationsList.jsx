@@ -19,13 +19,15 @@ function ModificationsList() {
   
   
   return(
-    <div>
-      <h2>Modifications:</h2>
+    <div className="flex flex-col gap-4 p-4 m-6 bg-blue-200 border border-gray-600">
+      <h2 className="mb-2 text-xl">Modifications:</h2>
       <ul>
-        {modifications.map((modification, index) => <li key={index}>{modification}<button onClick={() => handleDeleteModification(index)}><FaDeleteLeft /></button></li>)}
+        {modifications.map((modification, index) => <li className="flex items-center justify-between " key={index}><span>{modification}</span><button className="px-4 py-2 text-red-600" onClick={() => handleDeleteModification(index)}><FaDeleteLeft /></button></li>)}
       </ul>
-      <input id="inputField" type="text" placeholder="Write your mod"/>
-      <button onClick={handleAddModification}><IoAddCircleSharp /></button>
+      <div className="flex">
+        <input className="pl-2" id="inputField" type="text" placeholder="Write your mod"/>
+        <button className="px-4 py-2 text-white bg-green-600" onClick={handleAddModification}><IoAddCircleSharp /></button>
+      </div>
     </div>
   )
 }
