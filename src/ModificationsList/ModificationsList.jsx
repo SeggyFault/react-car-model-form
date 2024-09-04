@@ -12,13 +12,17 @@ function ModificationsList() {
     inputField.value = "";
     setModifications(m => [...m, inputFieldValue]);
   }
+
+   function handleDeleteModification(index) {
+    setModifications(modifications.filter((_, i) => i !== index));
+  }
   
   
   return(
     <div>
       <h2>Modifications:</h2>
       <ul>
-        {modifications.map((modification, index) => <li key={index}>{modification}<button><FaDeleteLeft /></button></li>)}
+        {modifications.map((modification, index) => <li key={index}>{modification}<button onClick={() => handleDeleteModification(index)}><FaDeleteLeft /></button></li>)}
       </ul>
       <input id="inputField" type="text" placeholder="Write your mod"/>
       <button onClick={handleAddModification}><IoAddCircleSharp /></button>
