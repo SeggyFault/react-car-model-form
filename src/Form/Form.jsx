@@ -3,7 +3,7 @@ import ModificationsList from "../ModificationsList/ModificationsList";
 
 function Form() {
 
-  const [car, setCar] = useState({year: 1963, manufacturer: "Buick", model: "Riviera"});
+  const [car, setCar] = useState({year: new Date().getFullYear(), manufacturer: "Buick", model: "Riviera"});
 
   function handleYearChange(event){
     setCar(c => ({...c, year: event.target.value}));
